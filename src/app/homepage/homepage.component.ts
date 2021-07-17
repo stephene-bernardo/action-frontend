@@ -35,4 +35,7 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleCartClick(selectedProduct: any){
+    console.log(selectedProduct)
+  }
 }

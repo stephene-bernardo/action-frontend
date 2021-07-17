@@ -1,0 +1,18 @@
+
+
+.card-image {
+    height: 300px;
+}
+
+.card-subtitle {
+    min-height: 60px;   
+}
+
+.card-content {
+    height: 100px;
+}
+
+.button-add-cart {
+    height: 30px;
+    min-width: 100%;
+}
