@@ -1,0 +1,17 @@
+<div class="card-holder">
+    <mat-card class="card" *ngFor="let product of this.products">
+        <mat-card-title>
+            <img class="card-image" mat-card-image src="{{product.getImage()}}" alt="photo of {{product.getName}}">
+        </mat-card-title>
+        <mat-card-subtitle class="card-subtitle">
+            <div>{{product.getName()}}</div>
+            <div>{{product.getPrice()}}</div>
+        </mat-card-subtitle>
+        <mat-card-content class="card-content">
+            {{product.getDescription()}}
+        </mat-card-content>
+        <mat-card-footer>
+            <button class="button-add-cart" mat-button color="primary"> Add to Cart</button>
+        </mat-card-footer>
+    </mat-card>
+</div>
