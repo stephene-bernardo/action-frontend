@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from '../product'
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import {addProduct} from '../actions/products.action'
+import CartProduct from '../cart-product';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +11,13 @@ import {Product} from '../product'
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
+  selectedCartProducts:Array<any> = []
   products: Array<Product> = []
+  products$: Observable<Array<any>>;
 
-  constructor() { 
+  constructor(private store:Store<{products: Array<any>}>) { 
+    this.products$ = store.select('products');
+
     this.products.push(new Product(1, "Life DeFender", "Life Defender Premium Disposable Face Masks 3 Ply (50 pcs) - FDA Approved", 149, "assets/eb24efa3c3854258b442760da164d455.jpg_400x400q90.jpg_.webp"))
     this.products.push(new Product(2, "Colostomy Bag 70mm", "by Surgitech 1pc (Disposable)", 159, "assets/b4ce6e9239802fc0cd1baaf009e15700.jpg_400x400q90.jpg_.webp"))
     this.products.push(new Product(3, "Relief Hot Compress", "", 199.75, "assets/06ac3eb0c96a21af9e6007b31a5c5c85.jpg_400x400q90.jpg_.webp"))
@@ -36,6 +44,8 @@ export class HomepageComponent implements OnInit {
   }
 
   handleCartClick(selectedProduct: any){
-    console.log(selectedProduct)
+    let cartProduct = new CartProduct(selectedProduct, 1)
+    this.selectedCartProducts.push(cartProduct)
+    this.store.dispatch(addProduct(cartProduct))
   }
 }

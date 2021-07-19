@@ -10,6 +10,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { StoreModule } from '@ngrx/store';
+import {productsReducer} from './reducer/products.reducer';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     MatToolbarModule,
     MatCardModule,
     MatIconModule,
-    MatBadgeModule
+    MatBadgeModule,
+    StoreModule.forRoot({products: productsReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
