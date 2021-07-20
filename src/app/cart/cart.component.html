@@ -1,0 +1,9 @@
+<h1>Shopping Cart</h1>
+
+<div *ngFor="let product of products$ | async">
+    <app-cart-item (onCheck)="handleCheck($event)" (onQuantityChange)="handleQuantityChange($event)" [product]="product"></app-cart-item>
+</div>
+<div>
+    <p>Subtotal({{productCount$ | async}} items): {{totalPrice$ | async}}</p>
+    <button mat-button color="primary">Proceed to Checkout</button>
+</div>

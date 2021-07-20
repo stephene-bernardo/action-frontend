@@ -2,10 +2,12 @@ import { Product } from "./product";
 
 export default class CartProduct extends Product {
     quantity:number;
+    isPlaceOrder: boolean
 
-    constructor(product: Product, quantity: number) {
+    constructor(product: Product, quantity: number, isPlaceOrder:boolean) {
         super(product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getImage())
         this.quantity = quantity;
+        this.isPlaceOrder = isPlaceOrder;
     }
 
     setQuantity(quantity: number){
@@ -15,4 +17,13 @@ export default class CartProduct extends Product {
     getQuantity(): number{
         return this.quantity;
     }
+
+    setIsPlaceOrder(isPlaceOrder: boolean){
+        this.isPlaceOrder = isPlaceOrder;
+    }
+
+    getIsPlaceOrder(): boolean{
+        return this.isPlaceOrder;
+    }
+
 }

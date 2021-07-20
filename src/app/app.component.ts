@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {Observable} from 'rxjs';
-import { Store } from '@ngrx/store';
-import { count } from 'rxjs/operators';
+import {Observable, pipe} from 'rxjs';
+import { Store, select} from '@ngrx/store';
+import { scan } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -10,25 +10,17 @@ import { count } from 'rxjs/operators';
 })
 export class AppComponent {
   title = 'treat-anyone-ecommerce';
-  products$: Observable<any>
-
+  products$: Observable<number>
   
   constructor(private store: Store<{products: any}>) {
-    this.products$ = store.select('products');
-  }
-
-  getCartCount(): Observable<any> {
-
-    this.products$.pipe(count(i => {
-      // console.log(i.length)
-      return i.length;
-    })).subscribe(c => {
-      console.log("hi",c)
-      return c
-    })
-    return this.products$.pipe(count(i => {
-      console.log(i.length)
-      return i.length;
-    }))
+    this.products$ = store.pipe(select('products'),
+      scan((acc, products) => {
+        let quantity = 0;
+        for(let item of products){
+          quantity = quantity + item.quantity;
+        }
+        return quantity
+        }, 0)
+    )
   }
 }

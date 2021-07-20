@@ -44,7 +44,7 @@ export class HomepageComponent implements OnInit {
   }
 
   handleCartClick(selectedProduct: any){
-    let cartProduct = new CartProduct(selectedProduct, 1)
+    let cartProduct = new CartProduct(selectedProduct, 1, false)
     this.selectedCartProducts.push(cartProduct)
     this.store.dispatch(addProduct(cartProduct))
   }

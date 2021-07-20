@@ -12,13 +12,20 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { StoreModule } from '@ngrx/store';
 import {productsReducer} from './reducer/products.reducer';
+import { CartComponent } from './cart/cart.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import { CartItemComponent } from './cart-item/cart-item.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    CartComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +35,9 @@ import {productsReducer} from './reducer/products.reducer';
     MatCardModule,
     MatIconModule,
     MatBadgeModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCheckboxModule,
     StoreModule.forRoot({products: productsReducer})
   ],
   providers: [],

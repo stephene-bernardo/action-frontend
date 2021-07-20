@@ -1,7 +1,12 @@
 
 <mat-toolbar class="nav">
-  <span>Treat Anyone</span>
-  <mat-icon matBadge="{{(products$|async)?.length}}">shopping_cart</mat-icon>
+  <a routerLink="/">
+    <span>Treat Anyone</span>
+  </a>
+
+  <a routerLink="/cart">
+    <mat-icon matBadge="{{products$ | async}}">shopping_cart</mat-icon>
+  </a>
 </mat-toolbar>
 <div class="body">
   <router-outlet></router-outlet>

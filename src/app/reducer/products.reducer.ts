@@ -1,3 +1,4 @@
+import { isNgTemplate } from '@angular/compiler';
 import {createReducer, on} from '@ngrx/store'
 import {addProduct, resetProducts}  from '../actions/products.action';
 
@@ -7,7 +8,7 @@ const _productsReducer = createReducer(
     initialState,
     on(addProduct, (state, newValue )=> {
         let filteredState = state.filter((item) => item!==null && item.id !== newValue.id)
-        return [...filteredState, newValue]
+        return [...filteredState, newValue].sort((a, b) => a.id - b.id)
     }),
     on(resetProducts, state => [])
 )
