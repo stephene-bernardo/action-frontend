@@ -17,6 +17,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { BillingInformationComponent } from './billing-information/billing-information.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     HomepageComponent,
     ProductCardComponent,
     CartComponent,
-    CartItemComponent
+    CartItemComponent,
+    CheckoutComponent,
+    BillingInformationComponent,
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule,
