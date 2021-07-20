@@ -1,7 +1,12 @@
 .product {
     display: flex;
+    margin-bottom: 20px;
 }
 
+mat-checkbox{
+    display: flex;
+    width: 10%;
+}
 
 .product .picture {
     height: 200px;
@@ -21,14 +26,21 @@
 
 .quantity-inputbox {
     width: 50px;
+    text-align: center;
 }
 
 .product .price {
     width: 10%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.product .quantity button{
+    color: #73A24E;
 }

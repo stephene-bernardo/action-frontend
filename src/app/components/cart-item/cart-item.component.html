@@ -1,5 +1,5 @@
 <div class="product">
-    <mat-checkbox (change)="handleChecked($event.checked)" [checked]="product.isPlaceOrder" class="example-margin" ></mat-checkbox>
+    <mat-checkbox class="save-order" (change)="handleChecked($event.checked)" [checked]="product.isPlaceOrder" class="example-margin" ></mat-checkbox>
     <div class="product picture">
         <img src="{{product.image}}">
     </div>
@@ -19,7 +19,7 @@
             </button>
         </div>
     </div>
-    <div class="product price">
+    <div class="price">
         {{product.price | currency:"PHP":"symbol"}}
     </div>
 </div>

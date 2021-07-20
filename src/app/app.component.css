@@ -7,10 +7,22 @@
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 30%);
     padding-left: 10%;
     padding-right: 10%;
+    display: flex;
+    justify-content: space-between;
 }
 
+.dashboard-logo{
+    height: 50px;
+    width: 100px;
+}
 .body{
     margin-left: 10%;
     margin-right: 10%;
     padding: 80px 0
 }
+
+.cart-icon{
+    color: #73A24E;
+}
+
+

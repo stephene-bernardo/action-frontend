@@ -13,13 +13,16 @@
 }
 
 .card-content p{
-    /* white-space: nowrap;
-    word-break: break-all;
-    text-overflow: ellipsis; */
     overflow: hidden;
 }
 
 .button-add-cart {
+    color: white;
     height: 30px;
     min-width: 100%;
+    background: #73A24E
+}
+
+.button-add-cart:hover {
+    opacity: 0.5;
 }

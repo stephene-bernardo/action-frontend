@@ -7,10 +7,7 @@
         <div>{{this.product.getPrice() | currency:"PHP":"symbol"}}</div>
     </mat-card-subtitle>
     <mat-card-content class="card-content">
-        <p>
-            {{this.shortenDescription()}}
-        </p>
-
+        <p>{{this.shortenDescription()}}</p>
     </mat-card-content>
     <mat-card-footer>
         <button class="button-add-cart" mat-button color="primary" (click)="this.handleClickEvent()"> Add to Cart</button>

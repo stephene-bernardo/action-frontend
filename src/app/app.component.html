@@ -1,11 +1,12 @@
 
 <mat-toolbar class="nav">
   <a routerLink="/">
-    <span>Treat Anyone</span>
+    <!-- <span>Treat Anyone</span> -->
+    <img class="dashboard-logo" src="assets/logo/treatanyonelogo.png">
   </a>
 
   <a routerLink="/cart">
-    <mat-icon matBadge="{{products$ | async}}">shopping_cart</mat-icon>
+    <mat-icon class="cart-icon" matBadgeColor="primary" matBadge="{{products$ | async}}">shopping_cart</mat-icon>
   </a>
 </mat-toolbar>
 <div class="body">
