@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-order-summary',
@@ -9,20 +9,18 @@ export class OrderSummaryComponent implements OnInit {
   @Input()products: any
   totalPrice: number = 0
 
+  
+  @Output() onCheckoutClick = new EventEmitter<any>();
+
   constructor() { 
   }
 
   ngOnInit(): void {
-    this.totalPrice = this.products.reduce((acc:number, product:any)=>{
-      if(product.isPlaceOrder){
-        return  acc + (product.quantity * product.price);
-      }
-      return acc
-    }, 0)
+    this.totalPrice = this.products.reduce((acc:number, product:any) => 
+      product.isPlaceOrder? acc + (product.quantity * product.price) : acc, 0)
   }
 
   handlePlaceOrder(): void {
-
+    this.onCheckoutClick.emit()
   }
-
 }
