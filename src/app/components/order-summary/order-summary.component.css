@@ -1,0 +1,47 @@
+
+
+mat-card-title{
+    margin-bottom: 20px;
+}
+
+.subtotal{
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.product{
+    display: flex;
+}
+
+.product .name {
+    width: 50%;
+}
+
+.product .quantity{
+    width: 20%;
+}
+
+.product .totalPrice {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    width: 100%;
+}
+
+.total{
+    display: flex;
+    font-weight: bold;
+}
+
+.total .label{
+    width: 70%;
+}
+
+.total .result {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}

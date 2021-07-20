@@ -4,3 +4,28 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.checkout{
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout .title{
+  width: 100%;
+}
+
+.checkout .content{
+  display: flex;
+  width: 100%;
+}
+
+
+.billing-info{
+  width: 70%;
+  padding-right: 20px;
+}
+
+.order-summary {
+  width: 30%;
+  max-height: 300px;
+}

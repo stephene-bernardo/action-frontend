@@ -4,6 +4,6 @@
     <app-cart-item (onCheck)="handleCheck($event)" (onQuantityChange)="handleQuantityChange($event)" [product]="product"></app-cart-item>
 </div>
 <div>
-    <p>Subtotal({{productCount$ | async}} items): {{totalPrice$ | async}}</p>
+    <p>Subtotal({{productCount$ | async}} items): {{totalPrice$ | async | currency:"PHP":"symbol"}}</p>
     <button mat-button color="primary" routerLink="/checkout">Proceed to Checkout</button>
 </div>

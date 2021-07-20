@@ -1,0 +1,21 @@
+mat-card-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-card-title{
+    margin-bottom: 20px;
+}
+
+.basic-details{
+    width: 48%;
+}
+
+.address-details{
+    width: 48%;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 10px;
+}

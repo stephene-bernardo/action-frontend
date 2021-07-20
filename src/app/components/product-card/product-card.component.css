@@ -12,6 +12,13 @@
     height: 100px;
 }
 
+.card-content p{
+    /* white-space: nowrap;
+    word-break: break-all;
+    text-overflow: ellipsis; */
+    overflow: hidden;
+}
+
 .button-add-cart {
     height: 30px;
     min-width: 100%;

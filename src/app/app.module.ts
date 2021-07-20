@@ -20,6 +20,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { BillingInformationComponent } from './components/billing-information/billing-information.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { OrderSummaryComponent } from './components/order-summary/order-summary.
     MatButtonModule,
     MatInputModule,
     MatCheckboxModule,
+    MatDividerModule,
     StoreModule.forRoot({products: productsReducer})
   ],
   providers: [],

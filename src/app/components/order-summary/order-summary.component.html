@@ -1,21 +1,32 @@
-<mat-card>
+<mat-card class="order-summary-card">
     <mat-card-title>
         Order Summary
     </mat-card-title>
     <mat-card-content>
-        <div class="subtotal" *ngFor="let product of products">
-            <ng-container *ngIf="product.isPlaceOrder">
-                <div>
-                    {{product.name}} x {{product.quantity}}
-                </div>
-                <div class="totalPrice">
-                    {{product.price * product.quantity}}
-                </div>
-            </ng-container>
+        <div class="subtotal">
+            <div class="product"  *ngFor="let product of products">
+                <ng-container *ngIf="product.isPlaceOrder">
+                    <div class="name">
+                        {{product.name}}
+                    </div>
+                    <div class="quantity">
+                        x {{product.quantity}}
+                    </div>
+                    <div class="totalPrice">
+                        {{(product.price * product.quantity) | currency:"PHP":"symbol"}}
+                    </div>
+                </ng-container>
+            </div>
         </div>
+        <mat-divider [inset]="true"></mat-divider>
         <div class = "total">
-            Total:
-            {{totalPrice}}
+            <div class="label">
+                Total:
+            </div>
+            <div class="result">
+                {{totalPrice | currency:"PHP":"symbol"}}
+            </div>
+
         </div>
         <button mat-button color="primary" (click)="handlePlaceOrder()" >Place Order</button>
     </mat-card-content>
