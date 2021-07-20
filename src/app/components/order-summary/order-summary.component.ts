@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-order-summary',
@@ -8,7 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 export class OrderSummaryComponent implements OnInit {
   @Input()products: any
   totalPrice: number = 0
-
 
   constructor() { 
   }
@@ -20,6 +19,9 @@ export class OrderSummaryComponent implements OnInit {
       }
       return acc
     }, 0)
+  }
+
+  handlePlaceOrder(): void {
 
   }
 

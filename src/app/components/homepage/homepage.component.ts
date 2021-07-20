@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from '../product'
+import {Product} from '../../product'
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import {addProduct} from '../actions/products.action'
-import CartProduct from '../cart-product';
+import {addProduct} from '../../actions/products.action'
+import CartProduct from '../../cart-product';
 
 @Component({
   selector: 'app-homepage',

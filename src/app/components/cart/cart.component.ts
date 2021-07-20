@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import {Observable} from 'rxjs';
 import { scan } from 'rxjs/operators';
-import {addProduct} from '../actions/products.action'
+import {addProduct} from '../../actions/products.action'
 
 @Component({
   selector: 'app-cart',

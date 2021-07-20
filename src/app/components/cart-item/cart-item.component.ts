@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
-import CartProduct from '../cart-product';
+import CartProduct from '../../cart-product';
 import { Store } from '@ngrx/store';
-import { Product } from '../product';
+import { Product } from '../../product';
 
 @Component({
   selector: 'app-cart-item',
