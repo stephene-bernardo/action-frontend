@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import {Observable} from 'rxjs';
 import { scan } from 'rxjs/operators';
-import {addProduct} from '../../actions/products.action'
+import {updateProduct} from '../../actions/products.action'
 
 @Component({
   selector: 'app-cart',
@@ -56,11 +56,11 @@ export class CartComponent implements OnInit {
   }
 
   handleCheck(value:any){
-    this.store.dispatch(addProduct(value))    
+    this.store.dispatch(updateProduct(value))    
   }
 
   handleQuantityChange(value: any){
-    this.store.dispatch(addProduct(value))
+    this.store.dispatch(updateProduct(value))
   }
 
 }

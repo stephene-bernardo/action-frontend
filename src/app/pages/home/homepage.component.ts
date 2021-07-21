@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Product} from '../../product'
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import {addProduct} from '../../actions/products.action'
+import {addProduct, updateProduct} from '../../actions/products.action'
 import CartProduct from '../../cart-product';
 
 @Component({
@@ -41,6 +41,11 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  isOnCart(product:any){
+    this.products$.subscribe
+
   }
 
   handleCartClick(selectedProduct: any){
