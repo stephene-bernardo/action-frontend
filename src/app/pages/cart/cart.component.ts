@@ -18,13 +18,13 @@ export class CartComponent implements OnInit {
 
   constructor(private store: Store<{products: any}>) { 
     this.products$ = store.select('products');
-    this.products$.subscribe((values)=>{
-      for(let item of values){
-        this.products.push({...item, isChecked: false})
+    // this.products$.subscribe((values)=>{
+    //   for(let item of values){
+    //     this.products.push({...item, isChecked: false})
 
-        this.products = this.products.sort((a,b) => a-b)
-      }
-    })
+    //     this.products = this.products.sort((a,b) => a-b)
+    //   }
+    // })
     this.productCount$ = store.pipe(
       select('products'),
       scan((acc, products) => {

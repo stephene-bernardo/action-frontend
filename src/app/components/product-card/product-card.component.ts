@@ -16,8 +16,8 @@ export class ProductCardComponent implements OnInit {
   }
 
   shortenDescription(): string {
-    if(this.product.getDescription().length > 125){
-      return this.product.getDescription().substring(0, 125).concat('...')
+    if(this.product.getDescription().length > 80){
+      return this.product.getDescription().substring(0, 80).concat('...')
     }
     return this.product.getDescription()
   }

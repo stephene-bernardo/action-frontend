@@ -21,6 +21,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { BillingInformationComponent } from './components/billing-information/billing-information.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatInputModule,
     MatCheckboxModule,
     MatDividerModule,
+    MatTooltipModule,
     StoreModule.forRoot({products: productsReducer})
   ],
   providers: [],

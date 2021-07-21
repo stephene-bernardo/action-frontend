@@ -16,6 +16,7 @@ describe('OrderSummaryComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(OrderSummaryComponent);
     component = fixture.componentInstance;
+    component.products=[]
     fixture.detectChanges();
   });
 

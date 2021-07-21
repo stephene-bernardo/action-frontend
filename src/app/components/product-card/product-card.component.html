@@ -6,7 +6,9 @@
         <div>{{this.shortenTitle()}}</div>
         <div>{{this.product.getPrice() | currency:"PHP":"symbol"}}</div>
     </mat-card-subtitle>
-    <mat-card-content class="card-content">
+    <mat-card-content class="card-content" 
+        [matTooltip]="product.getDescription()"
+        matTooltipPosition="right">
         <p>{{this.shortenDescription()}}</p>
     </mat-card-content>
     <mat-card-footer>
