@@ -5,7 +5,7 @@
     <mat-card-content>
         <div class="subtotal">
             <div class="product"  *ngFor="let product of products">
-                <ng-container *ngIf="product.isPlaceOrder">
+                <ng-container *ngIf="product.isPlaceOrder && 0<product.quantity">
                     <div class="name">
                         {{product.name}}
                     </div>
