@@ -2,5 +2,6 @@
     <app-product-card class="card" 
         *ngFor="let product of this.products" 
         [product]="product" 
-        (onCartClick)="handleCartClick($event)"></app-product-card>
+        (onCartClick)="handleCartClick($event)">
+    </app-product-card>
 </div>

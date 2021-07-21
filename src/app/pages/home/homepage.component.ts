@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from '../../models/product'
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import {addProduct, updateProduct} from '../../actions/products.action'
+import {addProduct } from '../../actions/products.action'
 import CartProduct from '../../models/cart-product';
 import { ProductApiService } from 'src/app/services/product-api.service';
 
@@ -11,20 +10,15 @@ import { ProductApiService } from 'src/app/services/product-api.service';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent implements OnInit {
-  selectedCartProducts:Array<any> = []
+export class HomepageComponent {
   products: Array<Product> = []
 
-  constructor(private store:Store<{products: Array<any>}>, private productApi:ProductApiService) { 
+  constructor(private store:Store<{products: Array<any>}>, private productApi: ProductApiService) { 
     this.products = productApi.getProducts();
-  }
-
-  ngOnInit(): void {
   }
 
   handleCartClick(selectedProduct: any){
     let cartProduct = new CartProduct(selectedProduct, 1, false)
-    this.selectedCartProducts.push(cartProduct)
     this.store.dispatch(addProduct(cartProduct))
   }
 }
