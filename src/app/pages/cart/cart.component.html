@@ -1,7 +1,10 @@
 <h1>Shopping Cart</h1>
 
 <div *ngFor="let product of products$ | async">
-    <app-cart-item (onCheck)="handleCheck($event)" (onQuantityChange)="handleQuantityChange($event)" [product]="product"></app-cart-item>
+    <app-cart-item (onCheck)="handleCheck($event)" 
+        (onQuantityChange)="handleQuantityChange($event)" 
+        [product]="product">
+    </app-cart-item>
 </div>
 <div class="checkout-details">
     <p class="subtotal">
@@ -9,6 +12,8 @@
         <span>{{totalPrice$ | async | currency:"PHP":"symbol"}}</span>
     </p>
     <div class="checkout-button">
-        <button mat-button color="primary" [class.disableButton]="(productCount$ | async)===0" routerLink="/checkout">Proceed to Checkout</button>
+        <button mat-button color="primary" [class.disableButton]="(productCount$ | async)===0" routerLink="/checkout">
+            Proceed to Checkout
+        </button>
     </div>
 </div>

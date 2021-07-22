@@ -1,5 +1,6 @@
 <div class="product">
-    <mat-checkbox class="save-order" (change)="handleChecked($event.checked)" [checked]="product.isPlaceOrder" class="example-margin" ></mat-checkbox>
+    <mat-checkbox class="save-order" (change)="handleChecked($event.checked)" 
+        [checked]="product.isPlaceOrder"></mat-checkbox>
     <div class="product picture">
         <img src="{{product.image}}">
     </div>
@@ -8,13 +9,13 @@
         <p class="description">{{product.description}}</p>
         <div class="product quantity">
             Quantity: 
-            <button mat-icon-button (click)="removeItem()" color="primary" aria-label="Removing Item">
+            <button class="remove-button" mat-icon-button (click)="removeItem()" color="primary" aria-label="Removing Item">
                 <mat-icon>remove</mat-icon>
               </button>
             <mat-form-field class="quantity-inputbox" appearance="fill" floatLabel="always">
-                <input matInput type="number" placeholder="0" [value]="product.quantity" (change)=handleQuantityChange($event)>
+                <input class="change-input" matInput type="number" placeholder="0" [value]="product.quantity" (change)=handleQuantityChange($event)>
             </mat-form-field>
-            <button mat-icon-button (click)="addItem()" color="primary" aria-label="Adding More">
+            <button class="add-button" mat-icon-button (click)="addItem()" color="primary" aria-label="Adding More">
                 <mat-icon>add</mat-icon>
             </button>
         </div>

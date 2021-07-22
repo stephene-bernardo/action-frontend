@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import CartProduct from '../../models/cart-product';
-import { Store } from '@ngrx/store';
 import { Product } from '../../models/product';
 
 @Component({
@@ -9,15 +8,15 @@ import { Product } from '../../models/product';
   styleUrls: ['./cart-item.component.css']
   
 })
-export class CartItemComponent implements OnInit {
+export class CartItemComponent {
 
   @Input()product:any
   
-  @Output() onCheck = new EventEmitter<any>();
+  @Output() onCheck = new EventEmitter<CartProduct>();
 
-  @Output() onQuantityChange = new EventEmitter<any>();
+  @Output() onQuantityChange = new EventEmitter<CartProduct>();
   
-  constructor(private store:Store<{products: Array<any>}>) { 
+  constructor() { 
   }
 
   ngOnInit(): void {

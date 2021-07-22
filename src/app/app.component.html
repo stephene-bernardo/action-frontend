@@ -1,7 +1,6 @@
 
 <mat-toolbar class="nav">
   <a routerLink="/">
-    <!-- <span>Treat Anyone</span> -->
     <img class="dashboard-logo" src="assets/logo/treatanyonelogo.png">
   </a>
 
@@ -9,7 +8,7 @@
       <mat-icon class="cart-icon"  matBadgeColor="primary" [matBadge]="products">shopping_cart</mat-icon>
   </a>
   <a  class="disabled" *ngIf="!(products$ | async)" >
-    <mat-icon class="cart-icon"  matBadgeColor="primary" [matBadge]="0">shopping_cart</mat-icon>
+    <mat-icon class="cart-icon" >shopping_cart</mat-icon>
 </a>
 </mat-toolbar>
 <div class="body">

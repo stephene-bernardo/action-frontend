@@ -10,32 +10,15 @@ import { Router } from '@angular/router';
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
-export class CheckoutComponent implements OnInit {
+export class CheckoutComponent {
   products$: Observable<any>
-  totalPrice$: Observable<any>
 
-  constructor(private store: Store<{products: any}>, private router:Router) {
+  constructor(private store: Store<{products: any}>, private router: Router) {
     this.products$ = store.select('products');
-
-    this.totalPrice$ = store.pipe(
-      select('products'),
-      scan((acc, products) => {
-        let quantity = 0;
-        for(let item of products){
-          if(item.isPlaceOrder){
-            quantity = quantity + (item.quantity * item.price);
-          }
-        }
-        return quantity}, 0)
-      )
-  }
-
-  ngOnInit(): void {
   }
 
   handlePlaceOrder(){
     this.store.dispatch(resetProducts())
     this.router.navigate([''])
   }
-
 }

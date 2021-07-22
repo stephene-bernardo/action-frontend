@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import {Observable} from 'rxjs';
 import { scan } from 'rxjs/operators';
@@ -9,22 +9,13 @@ import {updateProduct} from '../../actions/products.action'
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent {
   products$: Observable<any>
   productCount$: Observable<number>
   totalPrice$: Observable<number>
-  selectedItems:Array<any> = []
-  products: Array<any> = []
 
   constructor(private store: Store<{products: any}>) { 
     this.products$ = store.select('products');
-    // this.products$.subscribe((values)=>{
-    //   for(let item of values){
-    //     this.products.push({...item, isChecked: false})
-
-    //     this.products = this.products.sort((a,b) => a-b)
-    //   }
-    // })
     this.productCount$ = store.pipe(
       select('products'),
       scan((acc, products) => {
@@ -33,7 +24,6 @@ export class CartComponent implements OnInit {
           if(item.isPlaceOrder){
             quantity = quantity + item.quantity;
           }
-
         }
         return quantity}, 0)
       )
@@ -52,9 +42,6 @@ export class CartComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-  }
-
   handleCheck(value:any){
     this.store.dispatch(updateProduct(value))    
   }
@@ -62,5 +49,4 @@ export class CartComponent implements OnInit {
   handleQuantityChange(value: any){
     this.store.dispatch(updateProduct(value))
   }
-
 }

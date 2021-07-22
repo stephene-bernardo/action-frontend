@@ -3,7 +3,7 @@
         <img class="card-image" mat-card-image src="{{this.product.getImage()}}" alt="photo of {{this.product.getName}}">
     </mat-card-title>
     <mat-card-subtitle class="card-subtitle">
-        <div>{{this.shortenTitle()}}</div>
+        <div class="title">{{this.shortenTitle()}}</div>
         <div>{{this.product.getPrice() | currency:"PHP":"symbol"}}</div>
     </mat-card-subtitle>
     <mat-card-content class="card-content" 

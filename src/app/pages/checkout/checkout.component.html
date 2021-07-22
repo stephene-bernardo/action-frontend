@@ -2,6 +2,8 @@
     <h1 class="title">Checkout</h1>
     <div class="content">
         <app-billing-information class="billing-info"></app-billing-information>
-        <app-order-summary class="order-summary" (onCheckoutClick)="handlePlaceOrder()" [products]="products$|async"></app-order-summary>    
+        <app-order-summary class="order-summary" 
+            (onCheckoutClick)="handlePlaceOrder()" 
+            [products]="products$|async"></app-order-summary>    
     </div>
 </div>
