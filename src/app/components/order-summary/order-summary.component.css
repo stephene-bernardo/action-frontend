@@ -52,3 +52,7 @@ button {
     background: #73A24E;
     color: white;
 }
+
+.button-place-order:hover{
+    opacity: .8;
+}
