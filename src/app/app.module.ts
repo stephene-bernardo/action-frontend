@@ -22,6 +22,7 @@ import { BillingInformationComponent } from './components/billing-information/bi
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatCheckboxModule,
     MatDividerModule,
     MatTooltipModule,
+    HttpClientModule,
     StoreModule.forRoot({products: productsReducer})
   ],
   providers: [],

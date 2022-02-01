@@ -1,6 +1,6 @@
 <div class="card-holder">
     <app-product-card class="card" 
-        *ngFor="let product of this.products" 
+        *ngFor="let product of this.products | async" 
         [product]="product" 
         (onCartClick)="handleCartClick($event)">
     </app-product-card>

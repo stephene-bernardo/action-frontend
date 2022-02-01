@@ -4,12 +4,13 @@
     <img class="dashboard-logo" src="assets/logo/treatanyonelogo.png">
   </a>
 
-  <a routerLink="/cart" *ngIf="(products$ | async) as products" >
+  <a>Hello {{name}}</a>
+  <!-- <a routerLink="/cart" *ngIf="(products$ | async) as products" >
       <mat-icon class="cart-icon"  matBadgeColor="primary" [matBadge]="products">shopping_cart</mat-icon>
   </a>
   <a  class="disabled" *ngIf="!(products$ | async)" >
     <mat-icon class="cart-icon" >shopping_cart</mat-icon>
-</a>
+</a> -->
 </mat-toolbar>
 <div class="body">
   <router-outlet></router-outlet>

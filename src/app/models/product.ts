@@ -1,16 +1,20 @@
+import ProductRequest from "./product-request";
+
 export class Product {
     id: number;
     name: string;
     description: string;
-    price: number;
+    highestBidPrice: number;
+    highestBidderName: string;
     image: string;
 
-    constructor(id:number, name:string, description:string, price: number, image: string) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.image = image;
+    constructor(productRequest: ProductRequest){
+        this.id = productRequest.product_id;
+        this.name = productRequest.item_name;
+        this.description = productRequest.item_description;
+        this.highestBidPrice = productRequest.bid_price;
+        this.highestBidderName = productRequest.bidder_name;
+        this.image = productRequest.image_url;
     }
 
     getId() : number{
@@ -25,8 +29,12 @@ export class Product {
         return this.description;
     }
 
-    getPrice(): number {
-        return this.price
+    getHighestBidPrice(): number {
+        return this.highestBidPrice
+    }
+
+    getHighestBidderName(): string {
+        return this.highestBidderName;
     }
 
     getImage(): string {

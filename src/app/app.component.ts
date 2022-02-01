@@ -11,8 +11,11 @@ import { scan } from 'rxjs/operators';
 export class AppComponent {
   title = 'treat-anyone-ecommerce';
   products$: Observable<number>
+  name : string;
   
   constructor(private store: Store<{products: any}>) {
+    this.name= (Math.random() + 1).toString(36).substring(7);
+
     this.products$ = store.pipe(select('products'),
       scan((acc, products) => {
         let quantity = 0;

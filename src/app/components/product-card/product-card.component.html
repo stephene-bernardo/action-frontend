@@ -3,8 +3,14 @@
         <img class="card-image" mat-card-image src="{{this.product.getImage()}}" alt="photo of {{this.product.getName}}">
     </mat-card-title>
     <mat-card-subtitle class="card-subtitle">
-        <div class="title">{{this.shortenTitle()}}</div>
-        <div>{{this.product.getPrice() | currency:"PHP":"symbol"}}</div>
+        <div class="title"><b>{{this.shortenTitle()}}</b></div>
+        <div>
+            <div>Bidder Price: {{this.product.getHighestBidPrice() | currency:"PHP":"symbol"}}</div>
+            <div>Bidder Name: {{!!this.product.getHighestBidderName()? this.product.getHighestBidderName(): "N/A"}}</div>
+        </div>
+        <mat-form-field class="quantity-inputbox" appearance="fill" floatLabel="always">
+            <input class="change-input" matInput type="number" placeholder="Bid Amount">
+        </mat-form-field>
     </mat-card-subtitle>
     <mat-card-content class="card-content" 
         [matTooltip]="product.getDescription()"
@@ -12,6 +18,7 @@
         <p>{{this.shortenDescription()}}</p>
     </mat-card-content>
     <mat-card-footer>
-        <button class="button-add-cart" mat-button color="primary" (click)="this.handleClickEvent()"> Add to Cart</button>
+     
+        <button class="button-add-cart" mat-button color="primary" (click)="this.handleClickEvent()"> Bid</button>
     </mat-card-footer>
 </mat-card>
